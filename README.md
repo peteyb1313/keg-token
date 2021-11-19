@@ -1,1 +1,1 @@
-Test
+Every Keg Token is redeamable for a single keg from the Doc.
