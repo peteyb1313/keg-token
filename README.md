@@ -4,7 +4,7 @@ Every Keg Token is redeamable for a single 5 gallon keg from The Doc.
 
 - 1 KEG = 5 Gallons
 
-- 0.1  KEGS = 5 Pins
+- 0.1  KEGS = 5 Pints
 - 0.02 KEGS = 1 Pint
 
 Currently setup on the Ropsten test network.
