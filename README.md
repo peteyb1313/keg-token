@@ -1,9 +1,8 @@
 # Keg Tokens (KEGS)
 
-Every Keg Token is redeamable for a single 5 gallon keg from The Doc.
+Every Keg Token is redeamable for a 5 gallon keg from The Doc.
 
 - 1 KEG = 5 Gallons
-
 - 0.1  KEGS = 5 Pints
 - 0.02 KEGS = 1 Pint
 
@@ -18,12 +17,17 @@ Every Keg Token is redeamable for a single 5 gallon keg from The Doc.
 
 If you don't have enough Eth for gas, request some here: https://faucet.ropsten.be/
 
+# Tokenomics 
+
+The brewer controls the Keg Token supply. Keg Tokens can be issued by the brewer. Every token is backed by, and redeamable for, one keg of beer. 
 
 # Technical Details
 
 Currently setup on the Ropsten test network.
 
 - Ropsten contract: https://ropsten.etherscan.io/token/0x1d45b83af7e69209108c1f91d5955fc1aef7737b
+
+- Brewery Transactions: https://ropsten.etherscan.io/token/0x1d45b83af7e69209108c1f91d5955fc1aef7737b?a=0xedb31a4e1ba43701402d60dcb089a0bae0181ddf
 
 - Contract Deployment Hash: 0x03509C9F6efB20F70181405DEd5FE1a0f52216D9
 
