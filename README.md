@@ -1,6 +1,6 @@
 # Keg Tokens (KEGS)
 
-Every Keg Token is redeamable for a single 5 gallon keg from the Doc.
+Every Keg Token is redeamable for a single 5 gallon keg from The Doc.
 
 - 1 KEG = 5 Gallons
 
