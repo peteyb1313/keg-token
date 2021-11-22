@@ -17,12 +17,12 @@ contract KegToken is ERC20 {
 	}
     
     function mint(address to, uint amount) external {
-        require(msg.sender == brewer, rejectMessage);
+        require(msg.sender == this.brewer, rejectMessage);
         _mint(to, amount);
     }
 
     function changeBrewer(address newBrewer) external {
-        require(msg.sender == brewer, rejectMessage);
+        require(msg.sender == this.brewer, rejectMessage);
         this.brewer = newBrewer;
     }
     

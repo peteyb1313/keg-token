@@ -3,8 +3,8 @@
 Every Keg Token is redeamable for a 5 gallon keg from The Doc.
 
 - 1 KEG = 5 Gallons
-- 0.1  KEGS = 5 Pints
-- 0.02 KEGS = 1 Pint
+- 0.1  KEG = 5 Pints
+- 0.02 KEG = 1 Pint
 
 # Setting Up Metamask
 
