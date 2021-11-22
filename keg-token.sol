@@ -14,7 +14,7 @@ contract KegToken is ERC20 {
     
     function decimals() public view override returns (uint8) {
         return 2;
-	}
+    }
     
     function mint(address to, uint amount) external {
         require(msg.sender == this.brewer, rejectMessage);
