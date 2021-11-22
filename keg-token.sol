@@ -4,7 +4,7 @@ import 'https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
 
 contract KegToken is ERC20 {
 
-    address public brewer;
+    address private brewer;
     string rejectMessage = 'No no no, only the brewer';
 
     constructor() ERC20('Keg Tokens', 'KEG'){
