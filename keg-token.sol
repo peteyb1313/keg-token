@@ -19,7 +19,7 @@ contract KegToken is ERC20 {
 
     constructor() ERC20('Keg Tokens', 'KEG'){
         _mint(msg.sender, orginalKegCount * 10 ** decimals);
-        admin = msg.sender;
+        brewer = msg.sender;
     }
     
     // allow the brewer to mint new tokens
