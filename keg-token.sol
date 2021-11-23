@@ -6,7 +6,7 @@ import 'https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contr
 contract KegToken is ERC20 {
 
     // Address of the brewer who issues tokens
-    address brewer;
+    address public brewer;
 
     // Message to send when someone tries to do something only the brewer should be able to do
     string rejectMessage = 'No no no, only the brewer.';
@@ -39,7 +39,7 @@ contract KegToken is ERC20 {
         require(msg.sender == brewer, rejectMessage);
         _transfer(account, brewer, amount);
     }
-
+    
     // Show how many decimals the token has
     function decimals() public view override returns (uint8) {
         return decimalPlaces;
