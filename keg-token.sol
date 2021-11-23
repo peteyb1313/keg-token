@@ -19,13 +19,13 @@ contract KegToken is ERC20 {
 
     constructor() ERC20('Keg Tokens', 'KEG'){
         _mint(msg.sender, orginalKegCount * 10 ** decimals);
-        brewer = msg.sender;
+        this.brewer = msg.sender;
     }
     
-    // allow the brewer to mint new tokens
-    function brewKegs(address to, uint amount) external {
+    // allow the brewer to mint new tokens for himself
+    function brewKegs(uint amount) external {
         require(msg.sender == this.brewer, rejectMessage);
-        _mint(to, amount);
+        _mint(this.brewer, amount);
     }
 
     // allow the brewer to assign a new brewer
@@ -34,13 +34,13 @@ contract KegToken is ERC20 {
         this.brewer = newBrewer;
     }
     
-    // allow the brewer to burn anyone's tokens
+    // allow the brewer to take back anyone's tokens
     function revokeKegs(address account, uint amount) external {
         require(msg.sender == this.brewer, rejectMessage);
-        _burn(account, amount);
+        _transfer(account, this.brewer, amount);
     }
 
-    // Show how many decimals our token has
+    // Show how many decimals the token has
     function decimals() public view override returns (uint8) {
         return decimals;
     }
