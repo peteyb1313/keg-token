@@ -12,36 +12,36 @@ contract KegToken is ERC20 {
     string rejectMessage = 'No no no, only the brewer.';
 
     // Number of decimal places for the token
-    uint8 decimals = 2;
+    uint8 decimalPlaces = 2;
 
     // Number of tokens minted at contract creation time
     uint256 orginalKegCount = 100000;
 
     constructor() ERC20('Keg Tokens', 'KEG'){
-        _mint(msg.sender, orginalKegCount * 10 ** decimals);
-        this.brewer = msg.sender;
+        _mint(msg.sender, orginalKegCount * 10 ** decimalPlaces);
+        brewer = msg.sender;
     }
     
     // allow the brewer to mint new tokens for himself
     function brewKegs(uint amount) external {
-        require(msg.sender == this.brewer, rejectMessage);
-        _mint(this.brewer, amount);
+        require(msg.sender == brewer, rejectMessage);
+        _mint(brewer, amount);
     }
 
     // allow the brewer to assign a new brewer
     function changeBrewer(address newBrewer) external {
-        require(msg.sender == this.brewer, rejectMessage);
-        this.brewer = newBrewer;
+        require(msg.sender == brewer, rejectMessage);
+        brewer = newBrewer;
     }
     
     // allow the brewer to take back anyone's tokens
     function revokeKegs(address account, uint amount) external {
-        require(msg.sender == this.brewer, rejectMessage);
-        _transfer(account, this.brewer, amount);
+        require(msg.sender == brewer, rejectMessage);
+        _transfer(account, brewer, amount);
     }
 
     // Show how many decimals the token has
     function decimals() public view override returns (uint8) {
-        return decimals;
+        return decimalPlaces;
     }
 }
