@@ -1,10 +1,10 @@
-# Keg Tokens (KEGS)
+# Keg Tokens (KEG)
 
 Every Keg Token is redeamable for a 5 gallon keg from The Doc.
 
 - 1 KEG = 5 Gallons
-- 0.1  KEGS = 5 Pints
-- 0.02 KEGS = 1 Pint
+- 0.1  KEG = 5 Pints
+- 0.02 KEG = 1 Pint
 
 # Setting Up Metamask
 
@@ -13,7 +13,7 @@ Every Keg Token is redeamable for a 5 gallon keg from The Doc.
 3. At the top of your wallet, change from "Ethereum Main Network" to "Ropsten Test Network"
 4. At the bottom of your wallet, select "Import Tokens" 
 5. For "Token Address" paste `0x1d45b83af7e69209108c1f91d5955fc1aef7737b`
-6. Send and receive KEGS!
+6. Send and receive KEGs!
 
 If you don't have enough Eth for gas, request some here: https://faucet.ropsten.be/
 
