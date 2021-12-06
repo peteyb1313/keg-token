@@ -1,14 +1,16 @@
 # Beer Tokens (KEG & PINT)
 
-Every Keg Token (KEG) is redeamable for a 5 gallon keg from The Doc.
+Every Pint Token (PINT) is redeemable for a 1 pint from the brewery.
 
-Every Pint Token (PINT) is redeamable for a 1 pint from a keg.
+Every Keg Token (KEG) is redeemable for a 5 gallon keg.
+
+Conversion table:
 
 - 1 KEG = 5 Gallons
-- 0.1  KEG = 5 Pints
-- 0.02 KEG = 1 Pint
+- 0.1  KEG = 5 PINTs
+- 0.02 KEG = 1 PINT
 
-# Setting Up Metamask
+# Setup
 
 1. Install Metamask on your phone
 2. Setup Metamask wallet
