@@ -17,6 +17,8 @@ contract BeerToken is ERC20 {
 
     /* Contstructor for BeerToken
     * 
+    * This creates a new ERC20 compliant token
+    * 
     * params:
     * _tokenName = Name of the token "My Beer Token"
     * _tokenCode = Short code for the token "MBT"
