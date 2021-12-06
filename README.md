@@ -36,7 +36,7 @@ Currently setup on the Ropsten test network.
 
 - Pint contract: https://ropsten.etherscan.io/token/0x1b12242029405ceb7e1c672e9a6e3c784c1b1865
 
-- Brewer: https://ropsten.etherscan.io/token/0x1d45b83af7e69209108c1f91d5955fc1aef7737b?a=0xedb31a4e1ba43701402d60dcb089a0bae0181ddf
+- Brewer: https://ropsten.etherscan.io/address/0xedb31a4e1ba43701402d60dcb089a0bae0181ddf
 
 - Keg contract deployment hash: 0xF9C4989687a456b40573F0C3B655F3307f24B40a
 
