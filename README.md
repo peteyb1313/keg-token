@@ -17,8 +17,10 @@ Conversion table:
 3. At the top of your wallet, change from "Ethereum Main Network" to "Ropsten Test Network"
 4. At the bottom of your wallet, select "Import Tokens" 
 5. For "Token Address" paste `0x1b12242029405ceb7e1c672e9a6e3c784c1b1865` this is the address for Pint Tokens (PINT)
-6. *Optional:* Repeate this for KEGs with address `0xf9c4989687a456b40573f0c3b655f3307f24b40a` (KEG)
+6. Swipe down to refresh your tokens.
 7. Send and receive PINTs!
+
+*Optional - for brewclub members only:* Repeate this for KEGs with address `0xf9c4989687a456b40573f0c3b655f3307f24b40a` (KEG)
 
 If you don't have enough Eth for gas, request some here: https://faucet.ropsten.be/
 
