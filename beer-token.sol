@@ -25,7 +25,7 @@ contract BeerToken is ERC20 {
     uint256 tokenCount;
 
 
-    constructor(string _tokenName, string _tokenCode, string _tokenCount, uint8 _decimalPlaces) public {   
+    constructor(string memory _tokenName, string memory _tokenCode, uint256 _tokenCount, uint8  _decimalPlaces) ERC20(_tokenName, _tokenCode) {   
         tokenName = _tokenName;
         tokenCode = _tokenCode;
         tokenCount = _tokenCount;
@@ -34,9 +34,6 @@ contract BeerToken is ERC20 {
         // set the brewer to the contract creator
         brewer = msg.sender;
         _mint(brewer, tokenCount * 10 ** decimalPlaces);
-
-        // create ERC20 token
-        super(tokenName, tokenCode);
     }
 
     // allow the brewer to mint new tokens for himself
