@@ -1,22 +1,26 @@
 # Beer Tokens (KEG & PINT)
 
-Every Keg Token (KEG) is redeamable for a 5 gallon keg from The Doc.
+Every Pint Token (PINT) is redeemable for a 1 pint from the brewery.
 
-Every Pint Token (PINT) is redeamable for a 1 pint from a keg.
+Every Keg Token (KEG) is redeemable for a 5 gallon keg.
+
+Conversion table:
 
 - 1 KEG = 5 Gallons
-- 0.1  KEG = 5 Pints
-- 0.02 KEG = 1 Pint
+- 0.1  KEG = 5 PINTs
+- 0.02 KEG = 1 PINT
 
-# Setting Up Metamask
+# Setup
 
 1. Install Metamask on your phone
 2. Setup Metamask wallet
 3. At the top of your wallet, change from "Ethereum Main Network" to "Ropsten Test Network"
 4. At the bottom of your wallet, select "Import Tokens" 
 5. For "Token Address" paste `0x1b12242029405ceb7e1c672e9a6e3c784c1b1865` this is the address for Pint Tokens (PINT)
-6. *Optional:* Repeate this for KEGs with address `0xf9c4989687a456b40573f0c3b655f3307f24b40a` (KEG)
+6. Swipe down to refresh your tokens.
 7. Send and receive PINTs!
+
+*Optional - for brewclub members only:* Repeate this for KEGs with address `0xf9c4989687a456b40573f0c3b655f3307f24b40a` (KEG)
 
 If you don't have enough Eth for gas, request some here: https://faucet.ropsten.be/
 
