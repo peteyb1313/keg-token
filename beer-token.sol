@@ -15,25 +15,21 @@ contract BeerToken is ERC20 {
     // Number of decimal places for the token
     uint8 decimalPlaces;
 
-    // Name of the token "My Beer Token"
-    string tokenName;
-
-    // Short code for the token "MBT"
-    string tokenCode;
-
-    // Number of tokens originally brewed during contract creation 
-    uint256 tokenCount;
-
+    /* Contstructor for BeerToken
+    * 
+    * params:
+    * _tokenName = Name of the token "My Beer Token"
+    * _tokenCode = Short code for the token "MBT"
+    * _tokenCount = Number of beers originally brewed during contract creation 
+    * _decimalPlaces = How divisible your beer is 
+    */
 
     constructor(string memory _tokenName, string memory _tokenCode, uint256 _tokenCount, uint8  _decimalPlaces) ERC20(_tokenName, _tokenCode) {   
-        tokenName = _tokenName;
-        tokenCode = _tokenCode;
-        tokenCount = _tokenCount;
         decimalPlaces = _decimalPlaces;
 
         // set the brewer to the contract creator
         brewer = msg.sender;
-        _mint(brewer, tokenCount * 10 ** decimalPlaces);
+        _mint(brewer, _tokenCount * 10 ** decimalPlaces);
     }
 
     // allow the brewer to mint new tokens for himself
