@@ -6,6 +6,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 //Deployment Hash (Ropsten) 0xE7316a56bFfa010283c0C009EbEB6e67A26F3177
+//Second http 0xE1AB62518FD67352C3E4D00E2631759a4D775728
 
 contract BeerGlassNFT is ERC721, ERC721Enumerable, ERC721Burnable, Ownable {
     constructor() ERC721("Zed NFT", "ZNFT") {}
