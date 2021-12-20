@@ -14,8 +14,8 @@ var App = {
             client.launch(DefaultMediaReceiver, function (err, player) {
                 console.log(err);
                 console.log("Launhcned setting vaolume");
-                //client.setVolume({ level: 0.5 }, function(err, newvol){ console.log( newvol) });
-                console.log(volume);
+                client.setVolume({ level: 0.75 }, function(err, newvol){ console.log( newvol) });
+                //console.log(volume);
                 var media = {
                     contentId: url,
                     contentType: 'audio/mp3',
@@ -57,5 +57,5 @@ var App = {
     }
 };
 console.log("Running app");
-App.run("192.168.0.156", "Sorry");
+App.run("192.168.0.156", "I'm alive, please help me");
 //App.broadcast("Broadcasted to all of the devices"); //Only works if you did step 4.5
