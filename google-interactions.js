@@ -13,7 +13,7 @@ var App = {
             console.log("Connected");
             client.launch(DefaultMediaReceiver, function (err, player) {
                 console.log(err);
-                console.log("Launhcned setting vaolume");
+                console.log("Launhcned setting volume");
                 client.setVolume({ level: 0.75 }, function(err, newvol){ console.log( newvol) });
                 //console.log(volume);
                 var media = {

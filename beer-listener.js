@@ -11,10 +11,6 @@ const web3 = new Web3("wss://ropsten.infura.io/ws/v3/9d558226a6364ce6a821646ee8c
 var wallets = require('./wallets.json');
 console.log(wallets);
 
-console.log(wallets.filter(item => {
-    return item.name === "Zead";
-}));
-
 
 console.log("Starting event query...");
 eventQuery();
@@ -55,6 +51,11 @@ async function eventQuery(){
             console.log("Sender: " + sender);
             console.log("Receiver:" +receiver);
             console.log("Number of Pints:" +numberOfPints);
+
+            console.log(wallets.filter(item => {
+                return (item.address === "address").name;
+            }));
+
 
             if(receiver == brewer) {
                 console.log("This is a beer redemption from the brewer. Enable the taps!");
