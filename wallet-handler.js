@@ -7,7 +7,7 @@ class WalletHandler {
 
     getName(address) {
         console.log("Finding address: " +address);
-        var wallet = this.wallets.find(x => x.address == address);
+        var wallet = this.wallets.find(x => x.address.toLowerCase() == address.toLowerCase());
         return wallet ? wallet.name : "Stranger";
     }
 }

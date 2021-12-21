@@ -13,12 +13,9 @@ const web3 = new Web3("wss://ropsten.infura.io/ws/v3/9d558226a6364ce6a821646ee8c
 var googleFuncs = new GoogleFuncs("192.168.0.156");
 var walletHandler = new WalletHandler();
 
-console.log(walletHandler.getName("0x03509C9F6efB20F70181405DEd5FE1a0f52216D9"))
-console.log(walletHandler.getName("0xEDb31a4e1BA43701402D60DcB089A0BAE0181ddF"))
-console.log(walletHandler.getName("0xEDb31a4e1BA43701402D60DcB089A0BAE0181dF"))
 
-//console.log("Starting event query...");
-//eventQuery();
+console.log("Starting event query...");
+eventQuery();
 
 
 async function eventQuery(){
@@ -57,19 +54,16 @@ async function eventQuery(){
             console.log("Receiver:" +receiver);
             console.log("Number of Pints:" +numberOfPints);
 
-            googleFuncs.sendMessage("Hello World");
+            var senderName = walletHandler.getName(sender);
+            var receiverName = walletHandler.getName(receiver);
 
-            console.log(wallets.filter(item => {
-                return (item.address === "address").name;
-            }));
-
+            googleFuncs.sendMessage("New pint transaction detected. " +senderName +" sent " +receiverName +" " +numberOfPints +(numberOfPints == 1 ? " pint." : " pints."));
 
             if(receiver == brewer) {
                 console.log("This is a beer redemption from the brewer. Enable the taps!");
             }
         })
         .on('error', console.error);
-
 }
 
 
