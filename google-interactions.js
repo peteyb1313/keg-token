@@ -37,9 +37,11 @@ class GoogleFuncs {
                     streamType: 'BUFFERED'
                 };
 
+                console.log("Playing message");
                 player.load(media, { autoplay: true }, function (err, status) {
                     player.on('status', function (status) {
                         if (status.playerState === "IDLE") {
+                            console.log("Closing connection");
                             client.close();
                         }
                     });
