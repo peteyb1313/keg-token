@@ -3,6 +3,7 @@ var Web3 = require('web3');
 var Contract = require('web3-eth-contract');
 var GoogleFuncs = require('./google-interactions.js');
 var WalletHandler = require('./wallet-handler.js');
+var ShellyFuncs = require('./shelly-interactions.js');
 
 const web3 = new Web3("wss://ropsten.infura.io/ws/v3/9d558226a6364ce6a821646ee8c51806");
 
@@ -12,6 +13,7 @@ const web3 = new Web3("wss://ropsten.infura.io/ws/v3/9d558226a6364ce6a821646ee8c
 
 var googleFuncs = new GoogleFuncs("192.168.0.156");
 var walletHandler = new WalletHandler();
+var shellyFuncs = new ShellyFuncs("192.168.0.156");
 
 
 console.log("Starting event query...");
@@ -61,6 +63,10 @@ async function eventQuery(){
 
             if(receiver == brewer) {
                 console.log("This is a beer redemption from the brewer. Enable the taps!");
+
+                shellyFuncs.switchRelay(true);
+                setTimeout(function(){shellyFuncs.switchRelay(false);}, 20000); // close taps in 20 seconds
+
             }
         })
         .on('error', console.error);
