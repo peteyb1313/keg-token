@@ -16,7 +16,7 @@ class GoogleFuncs {
             host: 'https://translate.google.com',
         });
 
-        console.log("Starting home call: " +this.ip);
+        console.log(`Starting home call: ${this.ip}`);
 
         var client = new Client();
 
