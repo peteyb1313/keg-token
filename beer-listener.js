@@ -63,7 +63,8 @@ async function eventQuery(){
 
             if(receiver == brewer) {
                 console.log("This is a beer redemption from the brewer. Enable the taps!");
-
+                setTimeout(function(){googleFuncs.sendMessage("Enabling taps!");}, 5000);
+                
                 shellyFuncs.switchRelay(true);
                 setTimeout(function(){shellyFuncs.switchRelay(false);}, 20000); // close taps in 20 seconds
 
