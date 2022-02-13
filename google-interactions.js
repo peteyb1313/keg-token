@@ -5,6 +5,7 @@ const googleTTS = require('google-tts-api');
 class GoogleFuncs { 
 
     constructor (ip) {
+        console.log(`Initiating google calls with IP ${ip}`);
         this.ip = ip;
     }
 

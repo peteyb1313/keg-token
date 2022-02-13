@@ -4,17 +4,39 @@ var Contract = require('web3-eth-contract');
 var GoogleFuncs = require('./google-interactions.js');
 var WalletHandler = require('./wallet-handler.js');
 var ShellyFuncs = require('./shelly-interactions.js');
+var minimist = require('minimist');
+
+var args = minimist(process.argv.slice(2), {
+    string: [ 'google-ip', 'shelly-ip' ],
+    boolean: [ 'enable-google' ],
+    alias: { h: 'help', v: 'version' },
+    default: { lang: 'en' },
+    '--': true,
+    stopEarly: true, /* populate _ with first non-option */
+    unknown: function () { console.log("Usage: beer-listener.js --enable-google=true --google-ip=<IP> --shelly-ip=<IP>"); process.exit(); } /* invoked on unknown param */
+  });
+
+console.log("Starting... \n");
+
+if(args.h) {
+    console.log("Usage: beer-listener.js --enable-google=true --google-ip=<IP> --shelly-ip=<IP>");
+    process.exit();
+}
+
+if(args["enable-google"] && args["google-ip"] == null) {
+    console.log("Set a google IP or disable google with --enable-google=false");
+    process.exit();
+}
 
 const web3 = new Web3("wss://ropsten.infura.io/ws/v3/9d558226a6364ce6a821646ee8c51806");
 
-// Pete Main: 0x03509C9F6efB20F70181405DEd5FE1a0f52216D9
-// Doc: 0xEDb31a4e1BA43701402D60DcB089A0BAE0181ddF
+var googleFuncs = null
 
+if(args["enable-google"]) 
+    googleFuncs = new GoogleFuncs(args["google-ip"]);
 
-var googleFuncs = new GoogleFuncs("192.168.0.156");
+var shellyFuncs = new ShellyFuncs(args["shelly-ip"]);
 var walletHandler = new WalletHandler();
-var shellyFuncs = new ShellyFuncs("192.168.0.156");
-
 
 console.log("Starting event query...");
 eventQuery();
@@ -59,11 +81,14 @@ async function eventQuery(){
             var senderName = walletHandler.getName(sender);
             var receiverName = walletHandler.getName(receiver);
 
-            googleFuncs.sendMessage("New pint transaction detected. " +senderName +" sent " +receiverName +" " +numberOfPints +(numberOfPints == 1 ? " pint." : " pints."));
+            if(args["enable-google"]) 
+                googleFuncs.sendMessage("New pint transaction detected. " +senderName +" sent " +receiverName +" " +numberOfPints +(numberOfPints == 1 ? " pint." : " pints."));
 
             if(receiver == brewer) {
                 console.log("This is a beer redemption from the brewer. Enable the taps!");
-                setTimeout(function(){googleFuncs.sendMessage("Enabling taps!");}, 5000);
+
+                if(args["enable-google"]) 
+                    setTimeout(function(){googleFuncs.sendMessage("Enabling taps!");}, 5000);
                 
                 shellyFuncs.switchRelay(true);
                 setTimeout(function(){shellyFuncs.switchRelay(false);}, 20000); // close taps in 20 seconds

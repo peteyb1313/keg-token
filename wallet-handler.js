@@ -1,8 +1,8 @@
 
 class WalletHandler {
     constructor(){
+        console.log("Loading wallets from ./wallets.json");
         this.wallets = require('./wallets.json');
-        console.log(this.wallets);
     }
 
     getName(address) {
