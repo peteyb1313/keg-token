@@ -20,9 +20,18 @@ Conversion table:
 6. Swipe down to refresh your tokens.
 7. Send and receive PINTs!
 
-*Optional - for brewclub members only:* Repeate this for KEGs with address `0xf9c4989687a456b40573f0c3b655f3307f24b40a` (KEG)
+*Optional - for brewclub members only:* Repeate this for KEGs with address `0xf9c4989687a456b40573f0c3b655f3307f24b40a` (KEG - Ropsten)
 
 If you don't have enough Eth for gas, request some here: https://faucet.ropsten.be/
+
+# Installation
+
+1. install node.js
+2. `git clone https://github.com/peteyb1313/keg-token`
+3. `cd keg-token`
+4. `npm install`
+5. `node beer-listener.js --enable-google=true --google-ip=192.168.0.105 --shelly-ip=192.168.0.154`
+
 
 # Tokenomics 
 
