@@ -28,7 +28,7 @@ if(args["enable-google"] && args["google-ip"] == null) {
     process.exit();
 }
 
-const web3 = new Web3("wss://ropsten.infura.io/ws/v3/9d558226a6364ce6a821646ee8c51806");
+const web3 = new Web3("wss://kovan.infura.io/ws/v3/9d558226a6364ce6a821646ee8c51806");
 
 var googleFuncs = null
 
@@ -44,7 +44,7 @@ eventQuery();
 
 async function eventQuery(){
 
-    var contract = new Contract(require('./contracts/pint-abi.json'), '0x1b12242029405ceb7e1c672e9a6e3c784c1b1865');
+    var contract = new Contract(require('./contracts/pint-abi.json'), '0x921f08D2078b15416876fD219cDADB40A46C2feC');
 
     contract.setProvider(web3);
 
